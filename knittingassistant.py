@@ -135,6 +135,8 @@ if __name__ == '__main__':
     with open('urllist.csv', 'r') as file:
         data = file.readlines()
 
+    experimental = 0
+
     for url_index in data:
         print(url_index)
         wollplatz(url_index)
@@ -144,7 +146,7 @@ if __name__ == '__main__':
 
 
     ''' Welcome to the Land of Promises! '''
-    ''' Attempting to save output to a Microsoft Access Database''' '''DLC Content'''
+    ''' Attempting to save output to a Microsoft Access Database''' '''DLC'''
 
     #
     # dbname = r'C:/Users/Guest/Desktop/NewDB.mdb'
@@ -166,7 +168,7 @@ if __name__ == '__main__':
     #                'VALUES ('product_name', 'composition', 'needle_size', 'price_actual', 'price_minus_tax', 'in_stock' )')
     # cursor.commit()
 
-    ''' Attempt to create a dynamic URL maker based on search term ''' '''DLC Content'''
+    ''' Attempt to create a dynamic URL maker based on search term ''' '''DLC'''
 
     #     import csv
     #     import html
