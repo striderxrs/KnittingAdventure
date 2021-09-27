@@ -1,10 +1,11 @@
 import os
 import csv
 import requests
-import pyodbc
 from bs4 import BeautifulSoup
 import sqlite3
-from sqlite3 import Error
+import pandas as pd
+import numpy as np
+
 
 
 def wollplatz(source):
@@ -95,6 +96,15 @@ def save_to_csv(product_name, composition, needle_size, price_actual, price_minu
         data_writer.writerow(rows)
         csvfile.close()
 
+    ''' Remove duplicate entries from the csv file '''
+    ''' Yet to be fixed - Character 'Â' is automatically prefixed before Euro symbol - No Major issue from this for now'''
+
+    df = pd.read_csv('KnittingAdventure.csv', encoding='unicode_escape')
+    df.drop_duplicates(inplace=True)
+    df = df.replace('Â', ' ')
+    df.to_csv('KnittingAdventureFinal.csv', index=False, encoding='utf-8')
+
+
     create_table(product_name, composition, needle_size, price_actual, price_minus_tax, in_stock)
 
 
@@ -104,7 +114,7 @@ def create_table(product_name, composition, needle_size, price_actual, price_min
     connection_obj = sqlite3.connect('pricelist.db')
     cursor_obj = connection_obj.cursor()
 
-    ''' Create Table '''
+    ''' Create Table (added new field BuyAT with the URL and Unique modifier'''
 
     table = """CREATE TABLE IF NOT EXISTS PRICELIST(
     Product VARCHAR(255) NOT NULL,
@@ -112,19 +122,21 @@ def create_table(product_name, composition, needle_size, price_actual, price_min
     NeedleSize VARCHAR(100),
     TotalPrice VARCHAR(100),
     PricebeforeVAT VARCHAR(100),
-    Availability CHAR(30)
+    Availability CHAR(30),
+    BuyAt VARCHAR(500),
+    UNIQUE (BuyAt)
     ); """
 
     cursor_obj.execute(table)
-    #print("table is ready")
 
     '''Insert into Table'''
+    '''Replaced Insert into with replace into to eliminate duplicate entries'''
 
-    cursor_obj.execute("insert into PRICELIST (Product, Composition, NeedleSize, TotalPrice, PricebeforeVAT, Availability) values(?,?,?,?,?,?)",(product_name, composition, needle_size, price_actual, price_minus_tax, in_stock))
-
+    cursor_obj.execute("replace into PRICELIST (Product, Composition, NeedleSize, TotalPrice, PricebeforeVAT, Availability, BuyAt) values(?,?,?,?,?,?,?)",(product_name, composition, needle_size, price_actual, price_minus_tax, in_stock, url_index))
 
     connection_obj.commit()
     connection_obj.close()
+
     return cursor_obj.lastrowid
 
 
@@ -145,7 +157,7 @@ if __name__ == '__main__':
 
 
 
-    ''' Welcome to the Land of Promises! '''
+
     ''' Attempting to save output to a Microsoft Access Database''' '''DLC'''
 
     #
