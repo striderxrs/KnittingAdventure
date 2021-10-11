@@ -76,9 +76,3 @@ https://docs.python-requests.org/en/latest/
 https://www.selenium.dev/documentation/
 
 and of course, youtube tutorials.
-
-**Final words:**
-
-Thank you for this opportunity, hopefully what I've written out there in that script is legible.
-This was just my first serious dive into webscraping, already seeing signs of improvement. I will post this to my github 
-account so I can upgrade it in the future hopefully. 
