@@ -1,5 +1,7 @@
 
 **Prologue**
+
+
 Given the problem, first step after reading related materials and trying out some sample scripting examples
 was to look at the website  - 'www.wollplatz.de' in detail to observe what information is available readily
 (the webpage layout, inspect element and page source)
