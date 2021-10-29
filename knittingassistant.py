@@ -157,8 +157,8 @@ if __name__ == '__main__':
 
 
 
-
-    ''' Attempting to save output to a Microsoft Access Database''' '''DLC'''
+    ''' Yet to be added/modified -- placeholders below '''
+    ''' Attempting to save output to a Microsoft Access Database'''
 
     #
     # dbname = r'C:/Users/Guest/Desktop/NewDB.mdb'
@@ -180,7 +180,7 @@ if __name__ == '__main__':
     #                'VALUES ('product_name', 'composition', 'needle_size', 'price_actual', 'price_minus_tax', 'in_stock' )')
     # cursor.commit()
 
-    ''' Attempt to create a dynamic URL maker based on search term ''' '''DLC'''
+    ''' Attempt to create a dynamic URL maker based on search term '''
 
     #     import csv
     #     import html

@@ -1,10 +1,10 @@
 
-**Prologue**
+**Prologue - Wollplatz webscraper**
 
 
 Given the problem, first step after reading related materials and trying out some sample scripting examples
 was to look at the website  - 'www.wollplatz.de' in detail to observe what information is available readily
-(the webpage layout, inspect element and page source)
+(the website layout, inspect element and page source)
 
 
 **Initial try:**
@@ -15,13 +15,9 @@ how the url changed w.r.t the query.
 Then modified the search term to match the url format. The idea was to save a list of search terms in a file
 then access them through a loop, changing the URL each time the loop runs to indicate to our next product.
 
-In compliance with the GDPR; the webpage had a popup cookie consent window which had to be dealt with using the alert.click() method.
-
-Progress is slow and cumbersome because of the extra browser windows opening and closing everytime the code is executed.
+Progress is slow and cumbersome because of the extra browser windows opening and closing every-time the code is executed.
 Decided to go for another approach with requests instead.
 
-Oh and also the 'Specifikation' table which held most of our required data didn't have any attributes so had to struggle to make sense of that.
-(beginner woes, I assume)
 
 **Second Try:**
 
@@ -35,8 +31,8 @@ Called the csv function to write to a file the information that was retrieved.
 
 Called the csv file in a loop to append information to the output file.
 
-Possible grievance: The information related to delivery time wasn't readily available unless I had an account and an address locally in DE 
-and even in that case I didn't find that information until I placed an order. 
+Possible grievance: The information related to delivery time was'nt readily available unless I have an account and an address locally in DE 
+and even in that case I did'nt find that information until I placed an order. 
 This is unlike Amazon which provides an option to insert your postcode and estimates delivery times. 
 
 
@@ -51,9 +47,8 @@ Initially tried to use MS Access, turned out to be a bit not too friendly. Switc
 another module to the tune of the next website and calling the subroutine through the main for loop.
 - Support for browser view of csv file or an output file that is compatible with browser for easy access.
 - Adding more test cases and exceptions to be caught, right now only timeout is being caught.
-- Adding a buy link to the product so that the customer is directly taken to the product page they need shoould they wish to purchase said item.
 - In addition to this, a login prompt which automatically logs in the user account to purchase(requires relevant information)
-- Writing  UI/UX elements for ease of use for the customer. 
+- Writing GUI/UX elements for ease of use. 
 
  
 **Some References used:**
