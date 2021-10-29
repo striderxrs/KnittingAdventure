@@ -1,11 +1,7 @@
-**Estimated time taken to finish until here - 10 hours**
 
-At the time of my first talk session with MARKT-PILOT, Webscraping was a topic that I was not familiar with.
-So I had to start from scratch reading up about General ideas and papers about the topic 
-in order to tackle the question.
-
+**Prologue**
 Given the problem, first step after reading related materials and trying out some sample scripting examples
-was to look at the website given - 'www.wollplatz.de' in detail to observe what information is available readily
+was to look at the website  - 'www.wollplatz.de' in detail to observe what information is available readily
 (the webpage layout, inspect element and page source)
 
 
@@ -52,7 +48,6 @@ Initially tried to use MS Access, turned out to be a bit not too friendly. Switc
 - Adding another website to the mix to compare prices and sort by price for a given product. Scaling at the moment can be done by writing 
 another module to the tune of the next website and calling the subroutine through the main for loop.
 - Support for browser view of csv file or an output file that is compatible with browser for easy access.
-(but of course chrome has extensions for that.. win-win I suppose)
 - Adding more test cases and exceptions to be caught, right now only timeout is being caught.
 - Adding a buy link to the product so that the customer is directly taken to the product page they need shoould they wish to purchase said item.
 - In addition to this, a login prompt which automatically logs in the user account to purchase(requires relevant information)
